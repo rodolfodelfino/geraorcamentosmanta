@@ -56,6 +56,12 @@
             <label for="emp">Nome da sua Empresa:
                 <input type="text" id="emp" placeholder="Nome da Empresa" required>
             </label>
+            <label for="endereco">Endereço da sua Empresa:
+                <input type="text" id="endereco" placeholder="Insira Endereço da sua Empresa" required>
+            </label>
+            <label for="telefone">Telefone da sua Empresa:
+                <input type="tel" id="telefone" placeholder=" Insira Telefone da sua Empresa" required>
+            </label>
             <label for="mmManta">Espessura da Manta mm:
                 <input type="number" id="mmManta" placeholder="Referência" required>
             </label>
@@ -75,7 +81,7 @@
                     </option>
                 </select>
             </label><br>
-            <label for="marcaManta">Marca da manta asfáltica: 
+            <label for="marcaManta">Marca da manta asfáltica:
                 <input type="text" id="marcaManta" placeholder="Marca da Manta" required>
             </label>
             <label for="marcaPrimer">Marca do Primer:
@@ -93,9 +99,7 @@
             </label>
 
 
-            <label for="logo">logo da sua Empresa:
-                <input type="file" id="logo" placeholder="logo da empresa" required>
-            </label>
+
 
             <label for="">
                 &nbsp;
@@ -127,7 +131,8 @@
 
     <footer class="rodape">
         <p>&copy; 2023 Desenvolvido por Solução PME de Marília-SP. Todos os direitos reservados.
-             Contato: <br> <a href="https://api.whatsapp.com/send?phone=5514997792544&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20que%20sua%20empresa%20oferece!">(14)
+            Contato: <br> <a
+                href="https://api.whatsapp.com/send?phone=5514997792544&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20que%20sua%20empresa%20oferece!">(14)
                 99779-2544</p></a>
     </footer>
 
@@ -202,6 +207,8 @@
             const formaPagamento = document.getElementById('formaPagamento').value;
             const mquadrado = document.getElementById('mquadrado').value;
             const valorOrcamento = document.getElementById('valorOrcamento').value;
+            const telefone = document.getElementById('telefone').value
+            const endereco = document.getElementById('endereco').value
 
             res2.innerHTML = `<h1>ORÇAMENTO DE IMPERMEABILIZAÇÃO</h1><br><br> Marília, ${dia} de ${mes} de ${ano}. <br><br> CLIENTE: ${cliente} <br> OBRA: ${obra}<br>
             Ref.: ${ref}<br><br> Prezado cliente, segue abaixo valores e especificações do serviço e produtos a serem utilizados na prestação <br> de serviços: <br><br>
@@ -251,7 +258,8 @@ Os valores apresentados nesta proposta foram calculados com base <br> nas inform
    Atenciosamente,<br>
         -------------------------------------<br>
            ${emp}<br>
-
+            ${endereco}<br>
+            ${telefone}<br>
         -------------------------------------`
 
             var conteudo = document.getElementById('res2').innerText
