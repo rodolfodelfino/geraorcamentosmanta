@@ -308,3 +308,34 @@ padding-top: 10px;
     align-items: center;
     height: 80vh;
   }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    margin: 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu img {
+    height: 170px;
+    width: 170px;
+    border-radius: 90px;
+    object-fit: cover;
+    margin: 25px;
+  }
+  
+  .menu a:hover {
+    transform: scale(1.35);
+  }
+  
+  .menu a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--bg);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.5s;
+  }
