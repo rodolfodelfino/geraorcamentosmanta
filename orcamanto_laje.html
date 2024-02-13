@@ -12,7 +12,7 @@
 <body>
     <header class="cabecalho">
         <h1>Gerador de Orçamentos impermeabilização Laje Protegida</h1>
-        <a href="index.html"><img src="imagens/home.svg" alt=""></a>
+        <a href="menu.html"><img src="imagens/home.png" alt=""></a>
     </header>
     <div id="container1">
 
@@ -87,6 +87,13 @@
             <label for="marcaPrimer">Marca do Primer:
                 <input type="text" id="marcaPrimer" placeholder="Marca da Manta" required>
             </label>
+            <label for="compraProduto">O valor do produto está incluso?<br>
+                <select id="compraProduto" required>
+                    <option value="incluindo os materiais">incluindo os materiais</option>
+                    <option value="excluindo os materiais">excluindo os materiais</option>
+                </select>
+            </label><br>
+
             <label for="valorOrcamento">Valor do orçamento sem centavos:
                 <input type="number" id="valorOrcamento" placeholder="Valor do orçamento sem centavos" required>
             </label>
@@ -96,6 +103,10 @@
             <label for="prazoExecucao">Prazo de Execução em dias:
                 <input type="number" id="prazoExecucao" placeholder="Prazo de execução em dias" required>
 
+            </label>
+
+            <label for="observacoes">Informações adicionais de responsabilidade do cliente:
+                <input type="text" id="observacoes" placeholder="Informações adicionais de responsabilidade do cliente" required>
             </label>
 
 
@@ -209,7 +220,8 @@
             const valorOrcamento = document.getElementById('valorOrcamento').value;
             const telefone = document.getElementById('telefone').value
             const endereco = document.getElementById('endereco').value
-
+            const compraProduto = document.getElementById('compraProduto').value
+           const observacoes = document.getElementById('observacoes').value
             res2.innerHTML = `<h1>ORÇAMENTO DE IMPERMEABILIZAÇÃO</h1><br><br> Marília, ${dia} de ${mes} de ${ano}. <br><br> CLIENTE: ${cliente} <br> OBRA: ${obra}<br>
             Ref.: ${ref}<br><br> Prezado cliente, segue abaixo valores e especificações do serviço e produtos a serem utilizados na prestação <br> de serviços: <br><br>
 
@@ -229,7 +241,7 @@ Os valores apresentados nesta proposta foram calculados com base <br> nas inform
 - O preparo da base e proteção mecânica são de responsabilidade do cliente.<br>
 <br>
 4. PREÇOS DOS MATERIAIS E SERVIÇOS:<br>
-- O valor do serviço de impermeabilização, incluindo os materiais, para uma metragem de ${mquadrado} m2 é de R$ ${valorOrcamento},00.<br><br>
+- O valor do serviço de impermeabilização, ${compraProduto}, para uma metragem de ${mquadrado} m2 é de R$ ${valorOrcamento},00.<br><br>
 
 5. VALIDADE DA PROPOSTA:<br>
 - Esta proposta está sujeita a alterações.<br>
@@ -252,8 +264,10 @@ Os valores apresentados nesta proposta foram calculados com base <br> nas inform
 
 9.2. A cargo do CLIENTE:<br>
 - Disponibilização de água, areia e cimento.<br>
+- Serviços de encanador e eletricista(se necessário).<br>
 - Preparo da base e acabamento final.<br>
-- Permitir livre acesso aos funcionários da CONTRATADA durante o horário comercial.<br><br>
+- Permitir livre acesso aos funcionários da CONTRATADA durante o horário comercial.<br>
+- ${observacoes}<br><br>
 
    Atenciosamente,<br>
         -------------------------------------<br>
@@ -265,7 +279,7 @@ Os valores apresentados nesta proposta foram calculados com base <br> nas inform
             var conteudo = document.getElementById('res2').innerText
             var doc = new jsPDF()
             doc.setFontSize(10);
-            doc.text(conteudo, 15, 40)
+            doc.text(conteudo, 15, 35)
             doc.save('orçamento.pdf')
 
 
