@@ -339,3 +339,10 @@ padding-top: 10px;
     font-weight: bold;
     transition: 0.5s;
   }
+
+  .cabecalho a img {
+    height: 45px;
+    width: 45px;
+    
+    
+  }
